@@ -6,6 +6,8 @@
 
 ## What is this fork?
 This fork is to utilize intel oneAPI extensions for PyTorch, usable on Linux.
+Tested with intel-extension-for-pytorch 2.1.30+xpu and torch 2.1.0.post2 with oneAPI basekit version 2024.1
+Mileage may vary if using other versions other than ones listed above
 
 ## About
 
