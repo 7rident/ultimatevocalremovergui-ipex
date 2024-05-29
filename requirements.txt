@@ -1,3 +1,6 @@
+torch==2.1.0.post2
+intel_extension_for_pytorch==2.1.30+xpu
+--extra-index-url https://pytorch-extension.intel.com/release-whl/stable/xpu/us/
 altgraph==0.17.3
 audioread==3.0.0
 certifi==2022.12.07
@@ -25,7 +28,6 @@ PyYAML==6.0
 resampy==0.4.2
 scipy==1.9.3
 soundstretch==1.2
-torch
 urllib3==1.26.12
 wget==3.2
 samplerate==0.1.0
