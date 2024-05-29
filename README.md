@@ -1,5 +1,5 @@
 # Ultimate Vocal Remover GUI v5.6 (Experimental Unofficial IPEX fork)
-<img src="https://raw.githubusercontent.com/Anjok07/ultimatevocalremovergui/master/gui_data/img/UVR_v5.6.png?raw=true" />
+<img src="https://raw.githubusercontent.com/7rident/ultimatevocalremovergui-ipex/master/gui_data/img/UVR_v5.6.png?raw=true" />
 
 ## What is this fork?
 This fork is to utilize intel oneAPI extensions for PyTorch on linux based systems.

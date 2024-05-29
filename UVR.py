@@ -1524,7 +1524,7 @@ class MainWindow(TkinterDnD.Tk if is_dnd_compatible else tk.Tk):
         self.download_validate_code()
         self.delete_temps(is_start_up=True)
         self.ensemble_listbox_Option.configure(state=tk.DISABLED)
-        self.command_Text.write(f'Ultimate Vocal Remover {VERSION} [{datetime.now().strftime("%Y-%m-%d %H:%M:%S")}]')
+        self.command_Text.write(f'Ultimate Vocal Remover {VERSION} |Experimental Unofficial IPEX fork| [{datetime.now().strftime("%Y-%m-%d %H:%M:%S")}]')
         self.update_checkbox_text = lambda:self.selection_action_process_method(self.chosen_process_method_var.get())
         self.check_dual_paths()
         if not is_windows:
