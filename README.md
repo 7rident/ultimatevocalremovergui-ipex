@@ -1,8 +1,11 @@
-# Ultimate Vocal Remover GUI v5.6
+# Ultimate Vocal Remover GUI v5.6 (janky linux IPEX fork)
 <img src="https://raw.githubusercontent.com/Anjok07/ultimatevocalremovergui/master/gui_data/img/UVR_v5.6.png?raw=true" />
 
 [![Release](https://img.shields.io/github/release/anjok07/ultimatevocalremovergui.svg)](https://github.com/anjok07/ultimatevocalremovergui/releases/latest)
 [![Downloads](https://img.shields.io/github/downloads/anjok07/ultimatevocalremovergui/total.svg)](https://github.com/anjok07/ultimatevocalremovergui/releases)
+
+## What is this fork?
+This fork is to utilize intel oneAPI extensions for PyTorch, usable on Linux.
 
 ## About
 
@@ -245,7 +248,7 @@ The **Ultimate Vocal Remover GUI** code is [MIT-licensed](LICENSE).
 - [Adefossez & Demucs](https://github.com/facebookresearch/demucs) - Developed the original Demucs AI code. 
 - [KimberleyJSN](https://github.com/KimberleyJensen) - Advised and aided the implementation of the training scripts for MDX-Net and Demucs. Thank you!
 - [Hv](https://github.com/NaJeongMo/Colab-for-MDX_B) - Helped implement chunks into the MDX-Net AI code. Thank you!
-
+- [intel](https://github.com/intel/intel-extension-for-pytorch) - Providing the libraries that make things tick for Intel Arc GPUs
 ## Contributing
 
 - For anyone interested in the ongoing development of **Ultimate Vocal Remover GUI**, please send us a pull request, and we will review it. 
