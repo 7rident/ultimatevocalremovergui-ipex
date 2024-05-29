@@ -19,6 +19,7 @@ import shutil
 import subprocess
 import soundfile as sf
 import torch
+import intel_extension_for_pytorch as ipex
 import urllib.request
 import webbrowser
 import wget
@@ -47,7 +48,7 @@ from pathlib  import Path
 from separate import (
     SeperateDemucs, SeperateMDX, SeperateMDXC, SeperateVR,  # Model-related
     save_format, clear_gpu_cache,  # Utility functions
-    cuda_available, mps_available, #directml_available,
+    cuda_available, mps_available, xpu_available #directml_available,
 )
 from playsound import playsound
 from typing import List
@@ -65,7 +66,7 @@ from collections import Counter
 # is_opencl_only = not cuda_available and directml_available
 # is_cuda_only = cuda_available and not directml_available
 
-is_gpu_available = cuda_available or mps_available# or directml_available
+is_gpu_available = cuda_available or mps_available or xpu_available # or directml_available
 
 # Change the current working directory to the directory
 # this file sits in
@@ -3174,7 +3175,10 @@ class MainWindow(TkinterDnD.Tk if is_dnd_compatible else tk.Tk):
                 self.cuda_device_list = [f"{torch.cuda.get_device_properties(i).name}:{i}" for i in range(torch.cuda.device_count())]
                 self.cuda_device_list.insert(0, DEFAULT)
                 #print(self.cuda_device_list)
-            
+            if xpu_available:
+                self.xpu_device_list = [f"{torch.xpu.get_device_properties(i).name}:{i}" for i in
+                range(torch.xpu.device_count())]
+                self.xpu_device_list.insert(0, DEFAULT)
             # if directml_available:
             #     self.opencl_list = [f"{torch_directml.device_name(i)}:{i}" for i in range(torch_directml.device_count())]
             #     self.opencl_list.insert(0, DEFAULT)

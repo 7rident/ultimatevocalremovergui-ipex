@@ -23,6 +23,7 @@ import numpy as np
 import onnxruntime as ort
 import os
 import torch
+import intel_extension_for_pytorch as ipex
 import warnings
 import pydub
 import soundfile as sf
@@ -41,6 +42,7 @@ if TYPE_CHECKING:
 
 mps_available = torch.backends.mps.is_available() if is_macos else False
 cuda_available = torch.cuda.is_available()
+xpu_available = torch.xpu.is_available()
 
 # def get_gpu_info():
 #     directml_device, directml_available = DIRECTML_DEVICE, False
@@ -61,6 +63,7 @@ def clear_gpu_cache():
         torch.mps.empty_cache()
     else:
         torch.cuda.empty_cache()
+        torch.xpu.empty_cache()
 
 warnings.filterwarnings("ignore")
 cpu = torch.device('cpu')
@@ -191,6 +194,9 @@ class SeperateAttributes:
                 if cuda_available:# and not self.is_use_opencl:
                     self.device = CUDA_DEVICE if not device_prefix else f'{device_prefix}:{self.device_set}'
                     self.run_type = ['CUDAExecutionProvider']
+
+                if xpu_available:
+                    self.device = "xpu:0" #probably NOT the best way to do it, but it works. put better code here if you have it...
 
         if model_data.process_method == MDX_ARCH_TYPE:
             self.is_mdx_ckpt = model_data.is_mdx_ckpt
