@@ -6,8 +6,6 @@ This fork is to utilize intel oneAPI extensions for PyTorch on linux based syste
 
 Currently, this has only been tested with Arch(EndeavourOS) with the intel-oneapi-basekit package from staging (2024.1)
 
-Models that have the ONNX extension will still utilize your CPU. ckpt/pth models have been confirmed as working.
-
 ## About
 
 This application uses state-of-the-art source separation models to remove vocals from audio files. UVR's core developers trained all of the models provided in this package (except for the Demucs v3 and v4 4-stem models).
